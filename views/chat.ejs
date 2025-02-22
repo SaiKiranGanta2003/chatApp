@@ -288,11 +288,12 @@
             messageDiv.className = `message ${isSender ? "sent text-end" : "received text-start btnNone"}`;
 
             const formattedTime = formatDateTime(time); // Convert timestamp to readable format
-
+// console.log(sender)
             messageDiv.innerHTML = `
-        <strong>${sender}:</strong> ${text} 
-        ${isSender ? ` <br> <button onclick="deleteMessage('${id}')" style="font-size : 13px;" class="removebutton">❌</button><button onclick="editMessage('${id}')" class="removebutton timestamp"><i class="fa-solid fa-pen-to-square" style="font-size : 13px;color:black"></i></button>` : ""} 
-        <span class='timestamp' style="font-size: 7px;margin-top:5px ;color: gray;">${formattedTime}</span>
+
+        <img src="${sender == 'Liki' ? '/girl' : '/boy'}" height="40" style="border-radius:50%;"> <strong>${sender}:</strong> ${text} 
+        ${isSender ? ` <br> <button onclick="deleteMessage('${id}')" style="font-size : 13px;" class="removebutton">❌</button><button onclick="editMessage('${id}')" class="removebutton timestamp"><i class="fa-solid fa-pen-to-square" style="font-size : 13px;color:black"></i></button>` : "<br>"} 
+        <span class='timestamp text-end' style="text-align:right ;font-size: 7px;margin-top:5px ;color: gray;">${formattedTime}</span>
     `;
 
             chatBox.appendChild(messageDiv);
