@@ -42,6 +42,13 @@ app.get("/signin.jpg",async(req,res)=>{
 app.get("/moblieSIgnIn.jpg",async(req,res)=>{
     return res.send(fs.readFileSync('./public/moblieSIgnIn.jpg'))
 })
+app.get("/boy",async(req,res)=>{
+    return res.send(fs.readFileSync('./public/boy.webp'))
+})
+
+app.get("/girl",async(req,res)=>{
+    return res.send(fs.readFileSync('./public/girl.webp'))
+})
 
 app.listen(PORT,
     ()=>{
